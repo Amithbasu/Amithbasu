@@ -8,20 +8,22 @@ int main() {
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
+     
     printf("Enter a word: ");
-    scanf("%s", text);
+    getchar();   
+    fgets(text, sizeof(text), stdin);
 
     printf("Enter key value: ");
     scanf("%d", &key);
 
     for(i = 0; text[i] != '\0'; i++) {
 
-        if(choice == 1) {  // Encryption
+        if(choice == 1) {  
             if(text[i] >= 'a' && text[i] <= 'z')
                 text[i] = ((text[i] - 'a' + key) % 26) + 'a';
         }
 
-        else if(choice == 2) {  // Decryption
+        else if(choice == 2) {  
             if(text[i] >= 'a' && text[i] <= 'z')
                 text[i] = ((text[i] - 'a' - key + 26) % 26) + 'a';
         }
